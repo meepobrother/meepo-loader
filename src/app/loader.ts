@@ -4,7 +4,7 @@ import { Subject } from 'rxjs/Subject';
 import { DOCUMENT } from '@angular/common';
 import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/operator/last';
-
+import { meepoLibs } from './meepo.libs';
 declare const $LAB: any;
 @Injectable()
 export class LoaderService {
@@ -18,6 +18,15 @@ export class LoaderService {
         script.innerHTML = this.jsStr;
         let head = this.document.getElementsByTagName('head')[0];
         head.append(script);
+    }
+
+    lab() {
+        return $LAB;
+    }
+
+    loader() {
+        let s = $LAB;
+        return s.script;
     }
 
     import(src: string[]): Observable<any> {
@@ -37,6 +46,18 @@ export class LoaderService {
         });
         let last = sub.asObservable();
         return last;
+    }
+
+    importLib(name: string) {
+        return this.import([this.config.root + meepoLibs[name]]);
+    }
+
+    importLibs(name: string[]) {
+        let srcs = [];
+        name.map(r => {
+            srcs.push(this.config.root + meepoLibs[r]);
+        });
+        return this.import(srcs);
     }
 }
 
