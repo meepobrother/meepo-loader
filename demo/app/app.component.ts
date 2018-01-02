@@ -29,5 +29,13 @@ export class AppComponent {
     this.system.import([swiper1]).subscribe(res => {
       console.log('swiper1 加载完毕', res);
     });
+
+    this.system.import([swiper1]).subscribe(res => {
+      console.log('swiper1 加载完毕', res);
+    });
+
+    this.system.import([swiper1]).subscribe(res => {
+      console.log('swiper1 加载完毕', res);
+    });
   }
 }
