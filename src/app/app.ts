@@ -1,17 +1,21 @@
-import { NgModule } from '@angular/core';
-import { QrcodeComponent } from './qrcode/qrcode';
-import { MeepoCoreServiceModule } from 'meepo-core';
-import { UuidModule } from 'meepo-uuid';
-
+import { NgModule, ModuleWithProviders } from '@angular/core';
+import { LoaderService, LOADER_CONFIG_TOKEN, SystemLoaderConfig } from './loader';
 @NgModule({
-    imports: [
-        MeepoCoreServiceModule,
-        UuidModule
+    providers: [
+        LoaderService
     ],
-    exports: [QrcodeComponent],
-    declarations: [QrcodeComponent],
-    providers: [],
 })
-export class QrcodeModule { }
-export { QrcodeComponent } from './qrcode/qrcode';
-
+export class LoaderModule {
+    public static forRoot(cfg: SystemLoaderConfig): ModuleWithProviders {
+        return {
+            ngModule: LoaderModule,
+            providers: [
+                {
+                    provide: LOADER_CONFIG_TOKEN,
+                    useValue: cfg
+                }
+            ]
+        }
+    }
+}
+export { LoaderService } from './loader';

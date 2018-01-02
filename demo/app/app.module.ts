@@ -1,9 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
-import { StoreModule } from 'meepo-store';
-import { QrcodeModule } from '../../src/app/app';
-
+import { LoaderModule } from '../../src/app/app';
 
 @NgModule({
   declarations: [
@@ -11,8 +9,9 @@ import { QrcodeModule } from '../../src/app/app';
   ],
   imports: [
     BrowserModule,
-    StoreModule,
-    QrcodeModule
+    LoaderModule.forRoot({
+      root: './assets/js/'
+    })
   ],
   providers: [],
   bootstrap: [AppComponent]

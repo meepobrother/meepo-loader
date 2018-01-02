@@ -1,6 +1,6 @@
 {
-    "name": "meepo-qrcode",
-    "version": "1.0.7",
+    "name": "meepo-loader",
+    "version": "1.0.8",
     "description": "runner for angular",
     "main": "./bundles/meepo.umd.js",
     "module": "./esm5/meepo.js",
@@ -18,15 +18,15 @@
     },
     "repository": {
         "type": "git",
-        "url": "git+https://github.com/meepobrother/meepo-qrcode.git"
+        "url": "git+https://github.com/meepobrother/meepo-loader.git"
     },
     "keywords": [],
     "author": "imeepos",
     "license": "MIT",
     "bugs": {
-        "url": "https://github.com/meepobrother/meepo-qrcode/issues"
+        "url": "https://github.com/meepobrother/meepo-loader/issues"
     },
-    "homepage": "https://github.com/meepobrother/meepo-qrcode/README.md",
+    "homepage": "https://github.com/meepobrother/meepo-loader/README.md",
     "devDependencies": {
         "@angular/cli": "^1.6.1",
         "@angular/compiler": "5.2.0-beta.1",
@@ -50,6 +50,7 @@
         "@angular/platform-browser": "5.2.0-beta.1",
         "reflect-metadata": "^0.1.10",
         "rxjs": "^5.5.5",
+        "systemjs": "^0.20.19",
         "zone.js": "0.8.4"
     }
 }

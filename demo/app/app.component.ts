@@ -2,29 +2,32 @@ import {
   Component, OnInit, ChangeDetectionStrategy,
   ViewChild, ElementRef, ChangeDetectorRef
 } from '@angular/core';
-import { MeepoCache } from 'meepo-base';
-import { StoreService } from 'meepo-store';
 import { Title } from '@angular/platform-browser';
-import { QrcodeComponent } from '../../src/app/app';
-
+import { LoaderService } from '../../src/app/app';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-export class AppComponent extends MeepoCache {
-  _qrcode: string = 'https://meeop.com.cn/';
-  constructor(
-    public store: StoreService,
-    public cd: ChangeDetectorRef,
-    public title: Title
-  ) {
-    super(store, cd, title);
-  }
+export class AppComponent {
 
-  meepoInit() {
-    setInterval(() => {
-      this._qrcode += '1';
-    }, 1000);
+  constructor(
+    public system: LoaderService
+  ) { }
+
+  loadSwiper() {
+    let swiper1 = './assets/libs/1.js';
+    let swiper2 = './assets/libs/2.js';
+    this.system.import([swiper1, swiper2]).subscribe(res => {
+      console.log('swiper1, swiper2 加载完毕', res);
+    });
+
+    this.system.import([swiper2]).subscribe(res => {
+      console.log('swiper2 加载完毕', res);
+    });
+
+    this.system.import([swiper1]).subscribe(res => {
+      console.log('swiper1 加载完毕', res);
+    });
   }
 }
