@@ -18,4 +18,13 @@ export const meepoLibs = {
     moxie: 'plupload/moxie.min.js',
     'moxie.swf': 'plupload/Moxie.swf',
     'moxie.xap': 'plupload/Moxie.xap',
+    // mescroll
+    'mescroll.m': 'mescroll/mescroll.m.js',
+    'mescroll': 'mescroll/mescroll.min.js',
+    // 拖拽
+    draggabilly: 'draggabilly/draggabilly.pkgd.min.js',
+    // photoswipe
+    photoswipe: 'photoswipe/photoswipe.min.js',
+    // clipboard
+    clipboard: 'clipboard/clipboard.min.js'
 };
