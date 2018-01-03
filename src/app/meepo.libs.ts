@@ -4,6 +4,8 @@ export const meepoLibs = {
     hammer: 'hammer.min.js',
     swiper: 'swiper-3.4.2.min.js',
     require: 'require.js',
+
+    html2canvas: 'html2canvas.min.js',
     // xscroll
     xscroll: 'xscroll/xscroll.min.js',
     infinite: 'xscroll/infinite.min.js',
