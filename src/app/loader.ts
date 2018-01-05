@@ -48,8 +48,12 @@ export class LoaderService {
         return last;
     }
 
-    importLib(name: string) {
-        return this.import([this.config.root + meepoLibs[name]]);
+    importLib(names: string[]) {
+        let srcs = [];
+        names.map(r => {
+            srcs.push(this.config.root + r);
+        });
+        return this.import(srcs);
     }
 
     importLibs(name: string[]) {
