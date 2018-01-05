@@ -51,7 +51,7 @@ export class LoaderService {
     importLocals(names: string[]) {
         let srcs = [];
         names.map(r => {
-            srcs.push(this.config.root + r);
+            srcs.push('./assets/meepo.libs/' + r);
         });
         return this.import(srcs);
     }
