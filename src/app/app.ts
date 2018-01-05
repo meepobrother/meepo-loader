@@ -6,7 +6,7 @@ import { LoaderService, LOADER_CONFIG_TOKEN, SystemLoaderConfig } from './loader
     ],
 })
 export class LoaderModule {
-    public forRoot(cfg: SystemLoaderConfig): ModuleWithProviders {
+    public static forRoot(cfg: SystemLoaderConfig): ModuleWithProviders {
         return {
             ngModule: LoaderModule,
             providers: [
