@@ -48,7 +48,7 @@ export class LoaderService {
         return last;
     }
 
-    importLib(names: string[]) {
+    importLocals(names: string[]) {
         let srcs = [];
         names.map(r => {
             srcs.push(this.config.root + r);
